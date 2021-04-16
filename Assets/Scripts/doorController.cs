@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class doorController : MonoBehaviour{
 
-    private Animator animacion;
+    //Spublic Animator animacion;
 
     public bool theDoorIs;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        animacion = this.GetComponent<Animator>();
-    }
+        /*animacion = this.GetComponent<Animator>();
 
-
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        if (collisionInfo.collider.tag == "Player")
+        if (Input.GetKey(KeyCode.Space))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                theDoorIs = !theDoorIs;
-                Debug.Log("Puerta Abierta");
-            }
-        }
-        
+            theDoorIs = !theDoorIs;
+            animacion.SetBool("theDoorIs", theDoorIs);
+        }*/
     }
+
 }
