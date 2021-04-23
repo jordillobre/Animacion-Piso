@@ -5,11 +5,12 @@ using UnityEngine;
 public class lightController : MonoBehaviour{
 
     public bool onSwitch;
-    public bool lightStatus;
+    public string site;
+    private bool lightStatus;
     public GameObject theLight;
 
     void Start(){
-        theLight.SetActive(lightStatus);
+        theLight.SetActive(PlayerPrefs.GetInt(site) == 1);
     }
 
 
@@ -23,7 +24,7 @@ public class lightController : MonoBehaviour{
  
     void Update(){
 
-        if(theLight.active == true){
+        if(PlayerPrefs.GetInt(site) == 1){
             lightStatus = true;
         }
 
@@ -36,6 +37,7 @@ public class lightController : MonoBehaviour{
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    PlayerPrefs.SetInt(site, 0);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
                 }
@@ -44,6 +46,7 @@ public class lightController : MonoBehaviour{
             else{
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    PlayerPrefs.SetInt(site, 1);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
                 }
