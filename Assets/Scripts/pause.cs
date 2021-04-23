@@ -23,4 +23,8 @@ public class pause : MonoBehaviour{
             canvas.enabled = active;
         }
     }
+
+    public void exit(){
+        Application.Quit();
+    }
 }

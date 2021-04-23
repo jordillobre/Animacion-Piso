@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float verticalMove;
     private Vector3 playerInput;
     private Vector3 movePlayer;
+    private Animator anim;
 
     public CharacterController player;
     public float playerSpeed;
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
+        
+
+        anim = GetComponent<Animator>();
+
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
 
@@ -39,8 +44,16 @@ public class PlayerController : MonoBehaviour
 
         player.transform.LookAt(player.transform.position + movePlayer);
 
-        player.Move(movePlayer * playerSpeed * Time.deltaTime);
+        if ((verticalMove != 0) || (horizontalMove != 0))
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
 
+        player.Move(movePlayer * playerSpeed * Time.deltaTime);
 
     }
 
