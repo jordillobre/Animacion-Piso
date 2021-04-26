@@ -44,14 +44,8 @@ public class PlayerController : MonoBehaviour
 
         player.transform.LookAt(player.transform.position + movePlayer);
 
-        if ((verticalMove != 0) || (horizontalMove != 0))
-        {
-            anim.SetBool("isWalking", true);
-        }
-        else
-        {
-            anim.SetBool("isWalking", false);
-        }
+        anim.SetFloat("velX", horizontalMove);
+        anim.SetFloat("velY", verticalMove);
 
         player.Move(movePlayer * playerSpeed * Time.deltaTime);
 
