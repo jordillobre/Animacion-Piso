@@ -33,10 +33,8 @@ public class lightController : MonoBehaviour{
         }
  
         if (onSwitch){
-            if (lightStatus)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
+            if (lightStatus){
+                if (Input.GetKeyDown(KeyCode.E)){
                     PlayerPrefs.SetInt(site, 0);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
