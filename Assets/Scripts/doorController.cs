@@ -13,14 +13,13 @@ public class doorController : MonoBehaviour{
     // Start is called before the first frame update
     public void Start(){
         animacion = this.GetComponent<Animator>();
-        Debug.Log(theDoorIs);
 
     }
 
     public void Update(){
         if (onDoor){
             if (theDoorIs){
-                if (Input.GetKey(KeyCode.E)){
+                if (Input.GetKey(KeyCode.Space)){
                     theDoorIs = false;
                     animacion.SetBool("action", theDoorIs);
                 }
@@ -33,14 +32,30 @@ public class doorController : MonoBehaviour{
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        onDoor = true;
+    void OnTriggerEnter(Collider other){
+        if (other.tag == "Player"){
+            onDoor = true;
+        }
+        
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        onDoor = false;
+    void OnTriggerExit(Collider other){
+        if (other.tag == "Player")
+        {
+            onDoor = false;
+        }
     }
+    void OnGUI(){
 
+        if (onDoor){
+            if (theDoorIs){
+                GUI.Box(new Rect(0, 0, 200, 20), "Press Space to close the door");
+            }
+
+            else{
+                GUI.Box(new Rect(0, 0, 200, 20), "Press Space to open the door");
+            }
+        }
+    }
 }
+
