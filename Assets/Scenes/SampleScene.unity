@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 38524193}
   m_Layer: 0
   m_Name: Entrada
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 71002298}
   m_Layer: 0
   m_Name: "Ba\xF1o2"
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,24 +513,6 @@ Transform:
   m_Father: {fileID: 1304714620}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &102815087 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5db46bc740e161e4792decd708ac9884, type: 3}
-  m_PrefabInstance: {fileID: 1349128771}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &102815088
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102815087}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6620151, y: 1.9672081, z: 0.11323105}
-  m_Center: {x: 0.22917956, y: -0.009385675, z: -0.0009888895}
 --- !u!4 &123813267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5c5d675157a1a8c4bb3a499600b460f8, type: 3}
@@ -635,7 +617,7 @@ GameObject:
   - component: {fileID: 151601377}
   m_Layer: 0
   m_Name: Pasillo
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1599,6 +1581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c63b76177efccb746bb71ed4d2c5f340, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 983699022740258570, guid: c63b76177efccb746bb71ed4d2c5f340, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.076653324
@@ -2308,6 +2294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: modular_kitchen_table_4
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69876b662dbfff945b3239cdac3b1811, type: 3}
+      propertyPath: m_TagString
+      value: Lavabo
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69876b662dbfff945b3239cdac3b1811, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2432,7 +2422,7 @@ GameObject:
   - component: {fileID: 164341337}
   m_Layer: 0
   m_Name: Comedor
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2732,7 +2722,7 @@ GameObject:
   - component: {fileID: 228146698}
   m_Layer: 0
   m_Name: "Ba\xF1o1"
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2838,6 +2828,10 @@ PrefabInstance:
     - target: {fileID: 100020, guid: 9093dcf6b487b4445b317d8469e66af8, type: 3}
       propertyPath: m_Name
       value: sofa
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 9093dcf6b487b4445b317d8469e66af8, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 9093dcf6b487b4445b317d8469e66af8, type: 3}
       propertyPath: m_RootOrder
@@ -3477,6 +3471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: silla (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
 --- !u!4 &448137984 stripped
@@ -3531,7 +3529,7 @@ GameObject:
   - component: {fileID: 549539179}
   m_Layer: 0
   m_Name: Pasillo2
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3702,6 +3700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: silla
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
 --- !u!4 &567341920 stripped
@@ -3734,7 +3736,7 @@ GameObject:
   - component: {fileID: 579804060}
   m_Layer: 0
   m_Name: PasilloCocina
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3800,7 +3802,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 579804057}
   onDoor: 0
-  theDoorIs: 1
 --- !u!65 &579804060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4774,6 +4775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: silla (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
 --- !u!4 &726202770 stripped
@@ -4803,7 +4808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04ac31082876134dbd95ed762cc2588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 755567733}
   playerSpeed: 1
   mainCamera: {fileID: 1685832136}
 --- !u!143 &755567733
@@ -4898,6 +4903,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e1b0308a529d0374fa50b59a3cff49dc, type: 3}
       propertyPath: m_Name
       value: cama
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1b0308a529d0374fa50b59a3cff49dc, type: 3}
+      propertyPath: m_TagString
+      value: Cama
       objectReference: {fileID: 0}
     - target: {fileID: 3976845664919591116, guid: e1b0308a529d0374fa50b59a3cff49dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5259,7 +5268,7 @@ GameObject:
   - component: {fileID: 818689896}
   m_Layer: 0
   m_Name: PasilloHabitacion2
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5312,7 +5321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 579804057}
   onDoor: 0
-  theDoorIs: 1
 --- !u!65 &818689898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5994,6 +6002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: silla (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
 --- !u!4 &986807260 stripped
@@ -6313,6 +6325,10 @@ PrefabInstance:
     - target: {fileID: 100022, guid: 47af50246352ed14da4ade618d736175, type: 3}
       propertyPath: m_Name
       value: washbasin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 47af50246352ed14da4ade618d736175, type: 3}
+      propertyPath: m_TagString
+      value: Lavabo
       objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: 47af50246352ed14da4ade618d736175, type: 3}
       propertyPath: m_RootOrder
@@ -8228,6 +8244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cama
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1b0308a529d0374fa50b59a3cff49dc, type: 3}
+      propertyPath: m_TagString
+      value: Cama
+      objectReference: {fileID: 0}
     - target: {fileID: 3976845664919591116, guid: e1b0308a529d0374fa50b59a3cff49dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8335,6 +8355,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
       propertyPath: m_Name
       value: silla (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
@@ -8445,6 +8469,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5db46bc740e161e4792decd708ac9884, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5db46bc740e161e4792decd708ac9884, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8017815783547229453, guid: 5db46bc740e161e4792decd708ac9884, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8940,7 +8968,7 @@ GameObject:
   - component: {fileID: 1426645748}
   m_Layer: 0
   m_Name: PasilloHabitacion1
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9006,7 +9034,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 0}
   onDoor: 0
-  theDoorIs: 1
 --- !u!65 &1426645750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9301,7 +9328,7 @@ GameObject:
   - component: {fileID: 1504921015}
   m_Layer: 0
   m_Name: "Ba\xF1oHabitacion"
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9367,7 +9394,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 0}
   onDoor: 0
-  theDoorIs: 1
 --- !u!65 &1504921018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10228,7 +10254,7 @@ GameObject:
   - component: {fileID: 1643556581}
   m_Layer: 0
   m_Name: "Ba\xF1oPasillo"
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10294,7 +10320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 0}
   onDoor: 0
-  theDoorIs: 1
 --- !u!65 &1643556581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10333,7 +10358,7 @@ GameObject:
   - component: {fileID: 1664526391}
   m_Layer: 0
   m_Name: Habitacion1
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11172,6 +11197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "puertaPasilloBa\xF1o"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5db46bc740e161e4792decd708ac9884, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8017815783547229453, guid: 5db46bc740e161e4792decd708ac9884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11197,7 +11226,7 @@ GameObject:
   - component: {fileID: 1820882867}
   m_Layer: 0
   m_Name: Habitacion2
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11368,6 +11397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: silla (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
+      propertyPath: m_TagString
+      value: Asiento
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1403e44911cb94d4dbc8433735525207, type: 3}
 --- !u!4 &1844813893 stripped
@@ -11416,6 +11449,10 @@ PrefabInstance:
     - target: {fileID: 100022, guid: 47af50246352ed14da4ade618d736175, type: 3}
       propertyPath: m_Name
       value: washbasin
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 47af50246352ed14da4ade618d736175, type: 3}
+      propertyPath: m_TagString
+      value: Lavabo
       objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: 47af50246352ed14da4ade618d736175, type: 3}
       propertyPath: m_RootOrder
@@ -12186,7 +12223,7 @@ GameObject:
   - component: {fileID: 2146198086}
   m_Layer: 0
   m_Name: cocina
-  m_TagString: Untagged
+  m_TagString: Interruptor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
