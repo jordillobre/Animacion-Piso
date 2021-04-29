@@ -8,25 +8,28 @@ public class doorController : MonoBehaviour{
 
     public bool onDoor;
 
-    public bool theDoorIs;
+    private bool theDoorIs;
 
     // Start is called before the first frame update
     public void Start(){
         animacion = this.GetComponent<Animator>();
-
+        theDoorIs = false;
     }
 
     public void Update(){
         if (onDoor){
             if (theDoorIs){
-                if (Input.GetKey(KeyCode.Space)){
+                if (Input.GetKeyDown(KeyCode.Space)){
                     theDoorIs = false;
                     animacion.SetBool("action", theDoorIs);
                 }
             }
             else{
-                theDoorIs = true;
-                animacion.SetBool("action", theDoorIs);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    theDoorIs = true;
+                    animacion.SetBool("action", theDoorIs);
+                }
             }
             
         }
@@ -38,6 +41,7 @@ public class doorController : MonoBehaviour{
         }
         
     }
+
 
     void OnTriggerExit(Collider other){
         if (other.tag == "Player")
