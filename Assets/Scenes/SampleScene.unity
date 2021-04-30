@@ -411,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6aefd9b8d8cb28f4f87b54d78bf0fca3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.709
+      value: 7.549
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6aefd9b8d8cb28f4f87b54d78bf0fca3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2941,6 +2941,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7976174, y: 0.9588582, z: 0.68723553}
   m_Center: {x: 0.014734213, y: 0.0041153827, z: 0.32922867}
+--- !u!65 &234293899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234293897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1915352, y: 0.6398239, z: 0.677592}
+  m_Center: {x: -0.00000040897925, y: 0.40515628, z: 0.33520293}
 --- !u!1001 &265132565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9659,7 +9672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862647253838274, guid: 032ae8c7c588c1649870cd4e79c65d68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.729
+      value: 7.534
       objectReference: {fileID: 0}
     - target: {fileID: 4862647253838274, guid: 032ae8c7c588c1649870cd4e79c65d68, type: 3}
       propertyPath: m_LocalPosition.y

@@ -52,11 +52,19 @@ public class PlayerController : MonoBehaviour
 
         player.transform.LookAt(player.transform.position + movePlayer);
 
-        anim.SetFloat("velX", horizontalMove);
-        anim.SetFloat("velY", verticalMove);
+        if (horizontalMove == 0 || verticalMove == 0)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", true);
+        }
+
+        /*anim.SetFloat("isWalking", horizontalMove);
+        anim.SetFloat("velY", verticalMove);*/
 
         player.Move(movePlayer * playerSpeed * Time.deltaTime);
-
     }
 
     void camDirection(){
@@ -73,8 +81,9 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerStay(Collider other){
         if (other.tag == "Asiento"){
             if (stand){
-                Debug.Log("pie");
+                
                 if (Input.GetKeyDown(KeyCode.Space)){
+                    Debug.Log("me siento");
                     anim.SetBool("sit", true);
                     sit = true;
                     stand = false;

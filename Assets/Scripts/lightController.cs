@@ -15,11 +15,18 @@ public class lightController : MonoBehaviour{
 
 
     void OnTriggerEnter(Collider other){
-        onSwitch = true;
+        if (other.tag== "Player")
+        {
+            onSwitch = true;
+        }
+        
     }
  
     void OnTriggerExit(Collider other){
-        onSwitch = false;
+        if (other.tag == "Player")
+        {
+            onSwitch = false;
+        }
     }
  
     void Update(){
