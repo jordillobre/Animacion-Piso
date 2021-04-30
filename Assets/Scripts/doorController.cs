@@ -42,13 +42,12 @@ public class doorController : MonoBehaviour{
         
     }
 
-
     void OnTriggerExit(Collider other){
-        if (other.tag == "Player")
-        {
+        if (other.tag == "Player"){
             onDoor = false;
         }
     }
+
     void OnGUI(){
 
         if (onDoor){

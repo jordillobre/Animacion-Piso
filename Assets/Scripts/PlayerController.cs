@@ -19,21 +19,29 @@ public class PlayerController : MonoBehaviour
 
     public Camera mainCamera;
 
+    private bool stand;
+    private bool sit;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<CharacterController>();
+
+        anim = GetComponent<Animator>();
+
+        stand = true;
+        sit = false;
+
+        anim.SetBool("sit", false);
+        anim.SetBool("stand", false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
-
-        
-
-        anim = GetComponent<Animator>();
+        verticalMove = Input.GetAxis("Vertical");     
 
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
@@ -51,8 +59,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void camDirection()
-    {
+    void camDirection(){
         camForward = mainCamera.transform.forward;
         camRight = mainCamera.transform.right;
 
@@ -61,5 +68,29 @@ public class PlayerController : MonoBehaviour
 
         camForward = camForward.normalized;
         camRight = camRight.normalized;
+    }
+
+    private void OnTriggerStay(Collider other){
+        if (other.tag == "Asiento"){
+            if (stand){
+                Debug.Log("pie");
+                if (Input.GetKeyDown(KeyCode.Space)){
+                    anim.SetBool("sit", true);
+                    sit = true;
+                    stand = false;
+                }
+            }
+            if (sit){
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    anim.SetBool("stand", true);
+                    anim.SetBool("sit", false);
+                    anim.SetBool("stand", false);
+                    sit = false;
+                    stand = true;
+                }
+
+            }
+        }
     }
 }
