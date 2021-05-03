@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using System;
 
 public class doorController : MonoBehaviour{
 
@@ -9,6 +11,11 @@ public class doorController : MonoBehaviour{
     public bool onDoor;
 
     private bool theDoorIs;
+
+    public AudioClip open;
+    public AudioClip close;
+
+    public AudioSource audoSource;
 
     // Start is called before the first frame update
     public void Start(){
@@ -22,6 +29,7 @@ public class doorController : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.Space)){
                     theDoorIs = false;
                     animacion.SetBool("action", theDoorIs);
+                    playSound(close);
                 }
             }
             else{
@@ -29,6 +37,7 @@ public class doorController : MonoBehaviour{
                 {
                     theDoorIs = true;
                     animacion.SetBool("action", theDoorIs);
+                    playSound(open);
                 }
             }
             
@@ -59,6 +68,12 @@ public class doorController : MonoBehaviour{
                 GUI.Box(new Rect(0, 0, 200, 20), "Press Space to open the door");
             }
         }
+    }
+
+    void playSound(AudioClip clip)
+    {
+        audoSource.clip = clip;
+        audoSource.Play();
     }
 }
 

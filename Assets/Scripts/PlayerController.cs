@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerInput;
     private Vector3 movePlayer;
     private Animator anim;
+    private bool onSit;
 
     public CharacterController player;
     public float playerSpeed;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<CharacterController>();
 
+        onSit = false;
+
         anim = GetComponent<Animator>();
 
         stand = true;
@@ -38,10 +41,24 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
+        move();
+
+        if (onSit)
+        {
+            if (stand){
+                sitting();
+            }
+            if (sit){
+                standing();
+            }
+        }
+
+    }
+
+    void move(){
         horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");     
+        verticalMove = Input.GetAxis("Vertical");
 
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
@@ -52,19 +69,28 @@ public class PlayerController : MonoBehaviour
 
         player.transform.LookAt(player.transform.position + movePlayer);
 
-        if (horizontalMove == 0 || verticalMove == 0)
-        {
-            anim.SetBool("isWalking", false);
-        }
-        else
-        {
-            anim.SetBool("isWalking", true);
-        }
-
-        /*anim.SetFloat("isWalking", horizontalMove);
-        anim.SetFloat("velY", verticalMove);*/
+        anim.SetFloat("velX", horizontalMove);
+        anim.SetFloat("velY", verticalMove);
 
         player.Move(movePlayer * playerSpeed * Time.deltaTime);
+    }
+
+    void sitting(){
+        if (Input.GetKeyDown(KeyCode.Space)){
+            anim.SetBool("sit",true);
+            sit = true;
+            stand = false;
+        }
+        anim.SetBool("sit", false);
+    }
+
+    void standing(){
+        if (Input.GetKeyDown(KeyCode.Space)){
+            anim.SetBool("stand", true);
+            sit = false;
+            stand = true;
+        }
+        anim.SetBool("stand", false);
     }
 
     void camDirection(){
@@ -80,26 +106,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other){
         if (other.tag == "Asiento"){
-            if (stand){
-                
-                if (Input.GetKeyDown(KeyCode.Space)){
-                    Debug.Log("me siento");
-                    anim.SetBool("sit", true);
-                    sit = true;
-                    stand = false;
-                }
-            }
-            if (sit){
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    anim.SetBool("stand", true);
-                    anim.SetBool("sit", false);
-                    anim.SetBool("stand", false);
-                    sit = false;
-                    stand = true;
-                }
+            onSit = true;
+        }
+    }
 
-            }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Asiento")
+        {
+            onSit = false;
         }
     }
 }
