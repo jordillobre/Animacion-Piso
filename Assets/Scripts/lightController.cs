@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class lightController : MonoBehaviour{
 
@@ -8,6 +9,10 @@ public class lightController : MonoBehaviour{
     public string site;
     private bool lightStatus;
     public GameObject theLight;
+
+    public AudioClip light;
+
+    public AudioSource audioSource;
 
     void Start(){
         theLight.SetActive(PlayerPrefs.GetInt(site) == 1);
@@ -45,6 +50,7 @@ public class lightController : MonoBehaviour{
                     PlayerPrefs.SetInt(site, 0);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
+                    playSound();
                 }
             }
 
@@ -54,6 +60,7 @@ public class lightController : MonoBehaviour{
                     PlayerPrefs.SetInt(site, 1);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
+                    playSound();
                 }
             }
         }
@@ -70,5 +77,11 @@ public class lightController : MonoBehaviour{
                 GUI.Box(new Rect(0, 0, 200, 20), "Press E to open the light");
             }
         }
+    }
+
+    void playSound(){
+        audioSource.clip = light;
+        audioSource.Play();
+
     }
 }
