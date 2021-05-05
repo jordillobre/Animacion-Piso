@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
                     anim.SetBool("stand", true);
                     sit = false;
                     stand = true;
+                    playerSpeed = 1f;
                     StartCoroutine(waitSit());
                 }
             }
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
                     anim.SetBool("sit", true);
                     sit = true;
                     stand = false;
+                    playerSpeed = 0f;
                     StartCoroutine(waitStand());
                 }
             }
@@ -62,13 +64,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    IEnumerator waitStand()
-    {
+    IEnumerator waitStand(){
         yield return new WaitForSeconds(1);
         anim.SetBool("stand", false);
     }
-    IEnumerator waitSit()
-    {
+
+    IEnumerator waitSit(){
         yield return new WaitForSeconds(1);
         anim.SetBool("sit", false);
     }
