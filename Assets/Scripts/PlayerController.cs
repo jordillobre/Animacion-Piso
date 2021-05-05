@@ -2,52 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
-
+public class PlayerController : MonoBehaviour { 
     private float horizontalMove;
     private float verticalMove;
+
     private Vector3 playerInput;
     private Vector3 movePlayer;
+    private Vector3 camForward;
+    private Vector3 camRight;
+
     private Animator anim;
     private bool onSit;
+    private bool stand;
+    private bool sit;
+    public bool canWalk;
 
     public CharacterController player;
     public float playerSpeed;
 
-    private Vector3 camForward;
-    private Vector3 camRight;
-
     public Camera mainCamera;
-
-    private bool stand;
-    private bool sit;
 
     // Start is called before the first frame update
     void Start(){
         player = GetComponent<CharacterController>();
 
-        onSit = false;
+        canWalk = true;
+        stand = true;
+        sit = false;
 
         anim = GetComponent<Animator>();
 
-        stand = true;
-        sit = false;
     }
 
     // Update is called once per frame
     void Update(){
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
-        move(horizontalMove, verticalMove);
-
+        if (canWalk){
+            move(horizontalMove, verticalMove);
+        }
+        
         if (onSit){
             if (sit){
                 if (Input.GetKeyDown(KeyCode.Space)){
                     anim.SetBool("stand", true);
                     sit = false;
                     stand = true;
-                    playerSpeed = 1f;
                     StartCoroutine(waitSit());
                 }
             }
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
                     anim.SetBool("sit", true);
                     sit = true;
                     stand = false;
-                    playerSpeed = 0f;
+                    canWalk = false;
                     StartCoroutine(waitStand());
                 }
             }
@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator waitStand(){
         yield return new WaitForSeconds(1);
         anim.SetBool("stand", false);
+        canWalk = true;
     }
 
     IEnumerator waitSit(){
