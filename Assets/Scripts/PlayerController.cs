@@ -43,23 +43,34 @@ public class PlayerController : MonoBehaviour
 
         if (onSit){
             if (sit){
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
+                if (Input.GetKeyDown(KeyCode.Space)){
                     anim.SetBool("stand", true);
                     sit = false;
                     stand = true;
+                    StartCoroutine(waitSit());
                 }
             }
             if (stand){
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
+                if (Input.GetKeyDown(KeyCode.Space)){
                     anim.SetBool("sit", true);
                     sit = true;
                     stand = false;
+                    StartCoroutine(waitStand());
                 }
             }
         }
 
+    }
+
+    IEnumerator waitStand()
+    {
+        yield return new WaitForSeconds(1);
+        anim.SetBool("stand", false);
+    }
+    IEnumerator waitSit()
+    {
+        yield return new WaitForSeconds(1);
+        anim.SetBool("sit", false);
     }
 
     void move(float h, float v){
