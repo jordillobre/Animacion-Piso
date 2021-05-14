@@ -9,6 +9,7 @@ TagManager:
   - Asiento
   - Cama
   - Lavabo
+  - Agua
   layers:
   - Default
   - TransparentFX
