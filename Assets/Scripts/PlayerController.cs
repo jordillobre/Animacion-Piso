@@ -12,10 +12,16 @@ public class PlayerController : MonoBehaviour {
     private Vector3 camRight;
 
     private Animator anim;
+
     private bool onSit;
-    private bool stand;
-    private bool sit;
+    private bool onBed;
+    private bool onDoor;
+    private bool onSink;
+
+    public bool stand;
+    public bool sit;
     public bool canWalk;
+
 
     public CharacterController player;
     public float playerSpeed;
@@ -45,19 +51,12 @@ public class PlayerController : MonoBehaviour {
         if (onSit){
             if (sit){
                 if (Input.GetKeyDown(KeyCode.Space)){
-                    anim.SetBool("stand", true);
-                    sit = false;
-                    stand = true;
-                    StartCoroutine(waitSit());
+                    standUP();
                 }
             }
             if (stand){
                 if (Input.GetKeyDown(KeyCode.Space)){
-                    anim.SetBool("sit", true);
-                    sit = true;
-                    stand = false;
-                    canWalk = false;
-                    StartCoroutine(waitStand());
+                    sitDonw();
                 }
             }
         }
@@ -68,11 +67,16 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds(1);
         anim.SetBool("stand", false);
         canWalk = true;
+        stand = true;
+        sit = false;
     }
 
     IEnumerator waitSit(){
         yield return new WaitForSeconds(1);
         anim.SetBool("sit", false);
+        canWalk = false;
+        sit = true;
+        stand = false;
     }
 
     void move(float h, float v){
@@ -95,6 +99,42 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    void getUp(){
+
+    }
+
+    void lieDown(){
+
+    }
+
+    void sitDonw(){
+        anim.SetBool("sit", true);
+        //sit = true;
+        //stand = false;
+        //canWalk = false;
+        StartCoroutine(waitStand());
+    }
+
+    void standUP(){
+        anim.SetBool("stand", true);
+        //sit = false;
+        //stand = true;
+        //canWalk = true;
+        StartCoroutine(waitSit());
+    }
+
+    /*void openDoor(){
+
+    }
+
+    void closeDoor(){
+
+    }*/
+
+    void handwashing(){
+
+    }
+
     void camDirection(){
         camForward = mainCamera.transform.forward;
         camRight = mainCamera.transform.right;
@@ -110,12 +150,43 @@ public class PlayerController : MonoBehaviour {
         if (other.tag == "Asiento"){
             onSit = true;
         }
+        if (other.tag == "Cama"){
+            onBed = true;
+        }
+        if (other.tag == "Puerta"){
+            onDoor = true;
+        }
+        if (other.tag == "Lavabo")
+        {
+            onSink = true;
+        }
     }
 
-    void OnTriggerExit(Collider other)
-    {
+    void OnTriggerExit(Collider other){
         if (other.tag == "Asiento"){
             onSit = false;
+        }
+        if (other.tag == "Cama") { 
+            onBed = false;
+        }
+        if (other.tag == "Puerta"){
+            onDoor = false;
+        }
+        if (other.tag == "Lavabo"){
+            onSink = false;
+        }
+    }
+ 
+    void OnGUI(){
+
+        if (onSit){
+            if (stand){
+                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa Espacio para sentarte");
+            }
+
+            if (sit){
+                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa Espacio para levantarte");
+            }
         }
     }
 }

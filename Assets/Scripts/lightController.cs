@@ -70,11 +70,11 @@ public class lightController : MonoBehaviour{
 
         if (onSwitch) {
             if (lightStatus){
-                GUI.Box(new Rect(0, 0, 200, 20), "Press E to close the light");
+                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa la tecla E para apagar la luz");
             }
 
             else{
-                GUI.Box(new Rect(0, 0, 200, 20), "Press E to open the light");
+                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa la tecla E para encender la luz");
             }
         }
     }
