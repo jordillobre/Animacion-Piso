@@ -21,7 +21,10 @@ public class PlayerController : MonoBehaviour {
     public bool stand;
     public bool sit;
     public bool canWalk;
-
+    public bool lie;
+    public bool washinHandsCold;
+    public bool washinHandsHot;
+    public bool sleep;
 
     public CharacterController player;
     public float playerSpeed;
@@ -34,7 +37,11 @@ public class PlayerController : MonoBehaviour {
 
         canWalk = true;
         stand = true;
+        sleep = false;
         sit = false;
+        lie = false;
+        washinHandsCold = false;
+        washinHandsHot = false;
 
         anim = GetComponent<Animator>();
 
@@ -49,14 +56,35 @@ public class PlayerController : MonoBehaviour {
         }
         
         if (onSit){
-            if (sit){
+            if (sit){ //ponerse en pie
                 if (Input.GetKeyDown(KeyCode.Space)){
                     standUP();
                 }
             }
-            if (stand){
+
+            if (stand){//sentarse
                 if (Input.GetKeyDown(KeyCode.Space)){
                     sitDonw();
+                }
+            }
+        }
+
+        if (onSink){
+            if (washinHandsCold || washinHandsHot){
+                if (Input.GetKeyDown(KeyCode.G)){
+                    washinHandsCold = !washinHandsCold;
+                }
+                if (Input.GetKeyDown(KeyCode.G)){
+                    washinHandsHot = !washinHandsHot; 
+                }
+            }
+
+            else{
+                if (Input.GetKeyDown(KeyCode.G)){
+                    washinHandsCold = !washinHandsCold;
+                }
+                if (Input.GetKeyDown(KeyCode.G)){
+                    washinHandsHot = !washinHandsHot;
                 }
             }
         }
@@ -99,12 +127,16 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void getUp(){
-
+    void getUp(){//levantarse de la cama
+        anim.SetBool("sleep", true);
+        sleep = true;
+        canWalk = false;
     }
 
-    void lieDown(){
-
+    void lieDown(){//acostarse en la cama
+        anim.SetBool("sleep", false);
+        sleep = false;
+        canWalk = true;
     }
 
     void sitDonw(){
@@ -131,8 +163,16 @@ public class PlayerController : MonoBehaviour {
 
     }*/
 
-    void handwashing(){
+    void handwashing(){//limpiarse las manos
+        if (washinHandsHot || washinHandsCold){
+            anim.SetBool("washing", true);
+            canWalk = false;
+        }
 
+        else{
+            anim.SetBool("washing", false);
+            canWalk = true;
+        }
     }
 
     void camDirection(){
