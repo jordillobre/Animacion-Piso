@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     private Vector3 camForward;
     private Vector3 camRight;
 
+    private GameObject especialRotation;
+
     private Animator anim;
 
     private bool onSit;
@@ -96,31 +98,19 @@ public class PlayerController : MonoBehaviour {
         sit = false;
         stand = true;
         canWalk = true;
-        StartCoroutine(waitSit());
     }
 
     IEnumerator waitStand(){
         yield return new WaitForSeconds(1);
         anim.SetBool("stand", false);
-        //canWalk = true;
-        //stand = true;
-        //sit = false;
     }
 
     void sitDonw(){
+        player.transform.LookAt(-especialRotation.transform.position);
         anim.SetBool("sit", true);
         sit = true;
         stand = false;
         canWalk = false;
-        StartCoroutine(waitStand());
-    }
-
-    IEnumerator waitSit(){
-        yield return new WaitForSeconds(1);
-        //anim.SetBool("sit", false);
-        //canWalk = false;
-        //sit = true;
-        //stand = false;
     }
 
     void move(float h, float v){
@@ -189,6 +179,7 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerStay(Collider other){
         if (other.tag == "Asiento"){
             onSit = true;
+            especialRotation = other.gameObject;
         }
         if (other.tag == "Cama"){
             onBed = true;
