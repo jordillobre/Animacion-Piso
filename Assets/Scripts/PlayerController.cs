@@ -57,13 +57,13 @@ public class PlayerController : MonoBehaviour {
         
         if (onSit){
             if (sit){ //ponerse en pie
-                if (Input.GetKeyDown(KeyCode.Space)){
+                if (Input.GetKeyDown(KeyCode.R)){
                     standUP();
                 }
             }
 
             if (stand){//sentarse
-                if (Input.GetKeyDown(KeyCode.Space)){
+                if (Input.GetKeyDown(KeyCode.T)){
                     sitDonw();
                 }
             }
@@ -90,21 +90,37 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
+    void standUP(){
+        anim.SetBool("sit", false);
+        anim.SetBool("stand", true);
+        sit = false;
+        stand = true;
+        canWalk = true;
+        StartCoroutine(waitSit());
+    }
 
     IEnumerator waitStand(){
         yield return new WaitForSeconds(1);
         anim.SetBool("stand", false);
-        canWalk = true;
-        stand = true;
-        sit = false;
+        //canWalk = true;
+        //stand = true;
+        //sit = false;
+    }
+
+    void sitDonw(){
+        anim.SetBool("sit", true);
+        sit = true;
+        stand = false;
+        canWalk = false;
+        StartCoroutine(waitStand());
     }
 
     IEnumerator waitSit(){
         yield return new WaitForSeconds(1);
-        anim.SetBool("sit", false);
-        canWalk = false;
-        sit = true;
-        stand = false;
+        //anim.SetBool("sit", false);
+        //canWalk = false;
+        //sit = true;
+        //stand = false;
     }
 
     void move(float h, float v){
@@ -137,22 +153,6 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("sleep", false);
         sleep = false;
         canWalk = true;
-    }
-
-    void sitDonw(){
-        anim.SetBool("sit", true);
-        //sit = true;
-        //stand = false;
-        //canWalk = false;
-        StartCoroutine(waitStand());
-    }
-
-    void standUP(){
-        anim.SetBool("stand", true);
-        //sit = false;
-        //stand = true;
-        //canWalk = true;
-        StartCoroutine(waitSit());
     }
 
     /*void openDoor(){
@@ -221,11 +221,11 @@ public class PlayerController : MonoBehaviour {
 
         if (onSit){
             if (stand){
-                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa Espacio para sentarte");
+                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa T para sentarte");
             }
 
             if (sit){
-                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa Espacio para levantarte");
+                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa R para levantarte");
             }
         }
     }
