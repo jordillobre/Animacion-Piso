@@ -91,6 +91,20 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
+        if (onBed){
+            if (sit){ //ponerse en pie
+                if (Input.GetKeyDown(KeyCode.R)){
+                    getUp();
+                }
+            }
+
+            if (stand){//sentarse
+                if (Input.GetKeyDown(KeyCode.T)){
+                    lieDown();
+                }
+            }
+        }
+
     }
     void standUP(){
         anim.SetBool("sit", false);
