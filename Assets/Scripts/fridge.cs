@@ -20,7 +20,6 @@ public class fridge : MonoBehaviour{
     public bool middleCage;
     public bool infCage;
 
-
     // Start is called before the first frame update
     void Start(){
         upDoorIs = false;
