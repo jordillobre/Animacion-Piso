@@ -39,6 +39,20 @@ public class fridge : MonoBehaviour{
                     upDoorIs = false;
                     upDoor.SetBool("action", upDoorIs);
                 }
+
+                if (fridgeCage){
+                    if (Input.GetKeyDown(KeyCode.Space)){
+                        upDoorIs = false;
+                        upDoor.SetBool("action", upDoorIs);
+                    }
+                }
+
+                else{
+                    if (Input.GetKeyDown(KeyCode.Space)){
+                        upDoorIs = false;
+                        upDoor.SetBool("action", upDoorIs);
+                    }
+                }
             }
 
             else{
@@ -48,6 +62,38 @@ public class fridge : MonoBehaviour{
                 }
             }
 
+            if (downDoorIs){
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    upDoorIs = false;
+                    upDoor.SetBool("action", downDoorIs);
+                }
+
+                if (fridgeCage){
+                    if (Input.GetKeyDown(KeyCode.Space)){
+                        upDoorIs = false;
+                        upDoor.SetBool("action", downDoorIs);
+                    }
+                }
+
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        upDoorIs = false;
+                        upDoor.SetBool("action", upDoorIs);
+                    }
+                }
+            }
+
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    upDoorIs = true;
+                    upDoor.SetBool("action", upDoorIs);
+                }
+            }
         }
 
     }
