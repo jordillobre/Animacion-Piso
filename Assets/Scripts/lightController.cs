@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class lightController : MonoBehaviour{
 
@@ -10,27 +11,33 @@ public class lightController : MonoBehaviour{
     private bool lightStatus;
     public GameObject theLight;
 
-    public AudioClip light;
+    public AudioClip lightAudio;
+
+    public string siteLight;
+    public Text textLight;
+
+    private string buttons;
 
     public AudioSource audioSource;
 
     void Start(){
         theLight.SetActive(PlayerPrefs.GetInt(site) == 1);
+        textLight.enabled = false;
     }
 
 
     void OnTriggerEnter(Collider other){
-        if (other.tag== "Player")
-        {
+        if (other.tag== "Player"){
             onSwitch = true;
+            textLight.enabled = true;
         }
         
     }
  
     void OnTriggerExit(Collider other){
-        if (other.tag == "Player")
-        {
+        if (other.tag == "Player"){
             onSwitch = false;
+            textLight.enabled = false;
         }
     }
  
@@ -45,6 +52,7 @@ public class lightController : MonoBehaviour{
         }
  
         if (onSwitch){
+            makeText();
             if (lightStatus){
                 if (Input.GetKeyDown(KeyCode.E)){
                     PlayerPrefs.SetInt(site, 0);
@@ -55,8 +63,7 @@ public class lightController : MonoBehaviour{
             }
 
             else{
-                if (Input.GetKeyDown(KeyCode.E))
-                {
+                if (Input.GetKeyDown(KeyCode.E)){
                     PlayerPrefs.SetInt(site, 1);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
@@ -65,23 +72,20 @@ public class lightController : MonoBehaviour{
             }
         }
     }
- 
-    void OnGUI(){
 
-        if (onSwitch) {
-            if (lightStatus){
-                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa la tecla E para apagar la luz");
-            }
-
-            else{
-                GUI.Box(new Rect(0, 0, 200, 20), "Pulsa la tecla E para encender la luz");
-            }
+    private void makeText(){
+        if (lightStatus){
+            buttons = "Pulsa la tecla E para apagar la luz " + siteLight;
         }
+
+        else{
+            buttons = "Pulsa la tecla E para encender la luz " + siteLight;
+        }
+        textLight.text = buttons;
     }
 
     void playSound(){
-        audioSource.clip = light;
+        audioSource.clip = lightAudio;
         audioSource.Play();
-
     }
 }

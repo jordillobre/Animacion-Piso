@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class comoda : MonoBehaviour {
 
@@ -10,6 +11,10 @@ public class comoda : MonoBehaviour {
     private bool cage2;
     private bool cage3;
     private bool cage4;
+
+    public Text textComoda;
+
+    private string buttons;
 
     public Animator animCage1;
     public Animator animCage2;
@@ -22,11 +27,16 @@ public class comoda : MonoBehaviour {
         cage2 = false;
         cage3 = false;
         cage4 = false;
+
+        textComoda.enabled = false;
+        buttons = "";
     }
 
     // Update is called once per frame
     void Update(){
         if (onSite){
+            makeText();
+
             if (cage1){
                 if (Input.GetKeyDown(KeyCode.M)){
                     cage1 = false;
@@ -97,6 +107,7 @@ public class comoda : MonoBehaviour {
     void OnTriggerEnter(Collider other){
         if (other.tag == "Player"){
             onSite = true;
+            textComoda.enabled = true;
         }
 
     }
@@ -104,19 +115,40 @@ public class comoda : MonoBehaviour {
     void OnTriggerExit(Collider other){
         if (other.tag == "Player"){
             onSite = false;
+            textComoda.enabled = false;
         }
     }
 
-    void OnGUI(){
-
-        if (onSite){
-            if (cage1){
-                GUI.Box(new Rect(0, 0, 200, 20), "Press Space to close the door");
-            }
-
-            else{
-                GUI.Box(new Rect(0, 0, 200, 20), "Press Space to open the door");
-            }
+    private void makeText(){
+        if (cage1){
+            buttons = "Pulsa la tecla M para cerrar el primer cajon \n";
         }
+        else{
+            buttons = "Pulsa la tecla M para abrir el primer cajon \n";
+        }
+
+        if (cage2){
+            buttons += "Pulsa la tecla N para cerrar el segundo cajon \n";
+        }
+        else{
+            buttons += "Pulsa la tecla N para abrir el segundo cajon \n";
+        }
+
+        if (cage3){
+            buttons += "Pulsa la tecla B para cerrar el tercer cajon \n";
+        }
+        else{
+            buttons += "Pulsa la tecla B para abrir el tercer cajon \n";
+        }
+
+        if (cage4){
+            buttons += "Pulsa la tecla V para cerrar el cuarto cajon \n";
+        }
+        else{
+            buttons += "Pulsa la tecla V para abrir el cuerto cajon \n";
+        }
+        textComoda.text = buttons;
     }
 }
+
+

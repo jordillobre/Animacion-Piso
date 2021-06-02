@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool onSit;
     private bool onBed;
-    private bool onDoor;
+    //private bool onDoor;
     private bool onSink;
 
     public bool stand;
@@ -198,9 +198,9 @@ public class PlayerController : MonoBehaviour {
         if (other.tag == "Cama"){
             onBed = true;
         }
-        if (other.tag == "Puerta"){
+        /*if (other.tag == "Puerta"){
             onDoor = true;
-        }
+        }*/
         if (other.tag == "Lavabo")
         {
             onSink = true;
@@ -214,9 +214,9 @@ public class PlayerController : MonoBehaviour {
         if (other.tag == "Cama") { 
             onBed = false;
         }
-        if (other.tag == "Puerta"){
+        /*if (other.tag == "Puerta"){
             onDoor = false;
-        }
+        }*/
         if (other.tag == "Lavabo"){
             onSink = false;
         }
