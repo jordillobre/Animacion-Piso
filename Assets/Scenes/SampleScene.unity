@@ -2558,7 +2558,7 @@ MonoBehaviour:
   animacion: {fileID: 152406382}
   onDoor: 0
   siteDoor: 
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 152406384}
@@ -20048,7 +20048,7 @@ MonoBehaviour:
   animacion: {fileID: 1245275119}
   onDoor: 0
   siteDoor: 
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1245275122}
@@ -26398,7 +26398,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -31700,7 +31700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: 2080a416521b10a48b5e226be98d783e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2885
+      value: 8.009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2080a416521b10a48b5e226be98d783e, type: 3}
@@ -38797,7 +38797,7 @@ MonoBehaviour:
   animacion: {fileID: 1781517486}
   onDoor: 0
   siteDoor: 
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1781517490}
@@ -40381,7 +40381,7 @@ MonoBehaviour:
   animacion: {fileID: 1964802193}
   onDoor: 0
   siteDoor: 
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1964802196}
