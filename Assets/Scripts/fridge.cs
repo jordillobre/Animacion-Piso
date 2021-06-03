@@ -75,7 +75,7 @@ public class fridge : MonoBehaviour{
 
             if (downDoorIs){
                 if (Input.GetKeyDown(KeyCode.T)){
-                    if ((upCageIs == false) && (middleCageIs = false) && (infCageIs == false)){
+                    if ((upCageIs == false) && (middleCageIs == false) && (infCageIs == false)){
                         downDoorIs = false;
                         downDoor.SetBool("action", downDoorIs);
                     }
@@ -165,7 +165,7 @@ public class fridge : MonoBehaviour{
         }
 
         if (downDoorIs){
-            buttons += "Pulsa la tecla T para cerrar la puerta superior\n";
+            buttons += "Pulsa la tecla T para cerrar la puerta inferior\n";
 
             if (upCageIs){
                 buttons += "Pulsa la tecla L para cerrar el cajon superior\n";
@@ -175,7 +175,7 @@ public class fridge : MonoBehaviour{
             }
         }
         else{
-            buttons += "Pulsa la tecla T para abrir la puerta superior\n";
+            buttons += "Pulsa la tecla T para abrir la puerta inferior\n";
         }
 
         textFridge.text = buttons;

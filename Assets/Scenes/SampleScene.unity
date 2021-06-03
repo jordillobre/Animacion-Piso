@@ -2557,6 +2557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 152406382}
   onDoor: 0
+  siteDoor: 
+  textDoor: {fileID: 0}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 152406384}
@@ -9925,6 +9927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 579804057}
   onDoor: 0
+  siteDoor: Cocina
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 579804061}
@@ -16418,6 +16422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 579804057}
   onDoor: 0
+  siteDoor: Habitacion 2
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 818689900}
@@ -16678,7 +16684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &869386010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20041,6 +20047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 1245275119}
   onDoor: 0
+  siteDoor: 
+  textDoor: {fileID: 0}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1245275122}
@@ -26155,6 +26163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 1426645748}
   onDoor: 0
+  siteDoor: Habitacion 1
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 1426645751}
@@ -26363,8 +26373,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -15}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 120.47453, y: -66.769745}
+  m_SizeDelta: {x: 240.9491, y: 133.5395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433326940
 MonoBehaviour:
@@ -26388,7 +26398,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -26399,7 +26409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1433326941
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31499,6 +31509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 1504921015}
   onDoor: 0
+  siteDoor: "Ba\xF1o"
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 1504921019}
@@ -32551,8 +32563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd85d2a853cde44e8bbc705c65b9f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animacion: {fileID: 0}
+  animacion: {fileID: 1643556578}
   onDoor: 0
+  siteDoor: "Ba\xF1o"
+  textDoor: {fileID: 1433326940}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 1643556582}
@@ -37950,7 +37964,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9e67363693caece439897f8a39af80ff, type: 2}
     - target: {fileID: -7598505206055290399, guid: fc5a178831cd3ad4eb6f260b6a8a0089, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.452
+      value: 0.07765938
       objectReference: {fileID: 0}
     - target: {fileID: -7446776531409708449, guid: fc5a178831cd3ad4eb6f260b6a8a0089, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38782,6 +38796,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 1781517486}
   onDoor: 0
+  siteDoor: 
+  textDoor: {fileID: 0}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1781517490}
@@ -40364,6 +40380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 1964802193}
   onDoor: 0
+  siteDoor: 
+  textDoor: {fileID: 0}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1964802196}
