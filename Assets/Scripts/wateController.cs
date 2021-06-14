@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class wateController : MonoBehaviour{
     public bool onWash;
+
+    public Text texTable;
+
+    private string buttons;
 
     private bool theHotWaterIs;
     private bool theColdWaterIs;
