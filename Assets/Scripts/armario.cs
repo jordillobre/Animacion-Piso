@@ -39,8 +39,7 @@ public class armario : MonoBehaviour {
 
             if (doorA){
                 if ((cage1 == false) && (cage2 == false)){
-                    if (Input.GetKeyDown(KeyCode.Q))
-                    {
+                    if (Input.GetKeyDown(KeyCode.Q)){
                         doorA = false;
                         animDoorA.SetBool("action", doorA);
                     }
