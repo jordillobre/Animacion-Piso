@@ -1952,7 +1952,7 @@ MonoBehaviour:
   theLight: {fileID: 1240373545}
   lightAudio: {fileID: 8300000, guid: 56404ded9ccb54644bbb1a5312acb5cf, type: 3}
   siteLight: "Ba\xF1o"
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 71002302}
 --- !u!65 &71002299
 BoxCollider:
@@ -7355,7 +7355,7 @@ MonoBehaviour:
   theLight: {fileID: 1985509692}
   lightAudio: {fileID: 8300000, guid: dda575b0cbf1af045ba44e664d6b00b0, type: 3}
   siteLight: Pasillo
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 151601381}
 --- !u!65 &151601378
 BoxCollider:
@@ -7732,7 +7732,7 @@ MonoBehaviour:
   theLight: {fileID: 705623060}
   lightAudio: {fileID: 8300000, guid: 4e8a43c9724bca245ba35a80f1dec861, type: 3}
   siteLight: Comedor
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 164341341}
 --- !u!65 &164341338
 BoxCollider:
@@ -8133,7 +8133,7 @@ MonoBehaviour:
   theLight: {fileID: 925671945}
   lightAudio: {fileID: 8300000, guid: dda575b0cbf1af045ba44e664d6b00b0, type: 3}
   siteLight: "Ba\xF1o"
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 228146702}
 --- !u!65 &228146699
 BoxCollider:
@@ -14530,10 +14530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSwitch: 0
   site: Habitacion1
-  theLight: {fileID: 0}
+  theLight: {fileID: 516802336}
   lightAudio: {fileID: 8300000, guid: 4e8a43c9724bca245ba35a80f1dec861, type: 3}
   siteLight: Habitacion
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 521417133}
 --- !u!82 &521417133
 AudioSource:
@@ -14889,7 +14889,7 @@ MonoBehaviour:
   theLight: {fileID: 1985509692}
   lightAudio: {fileID: 8300000, guid: dda575b0cbf1af045ba44e664d6b00b0, type: 3}
   siteLight: Pasillo
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 549539183}
 --- !u!65 &549539180
 BoxCollider:
@@ -15252,7 +15252,7 @@ MonoBehaviour:
   animacion: {fileID: 579804057}
   onDoor: 0
   siteDoor: Cocina
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 258322271}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 579804061}
@@ -21635,7 +21635,7 @@ MonoBehaviour:
   animacion: {fileID: 579804057}
   onDoor: 0
   siteDoor: Habitacion 2
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 258322271}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 818689900}
@@ -31168,7 +31168,7 @@ MonoBehaviour:
   animacion: {fileID: 1426645748}
   onDoor: 0
   siteDoor: Habitacion 1
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 258322271}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 1426645751}
@@ -31631,7 +31631,7 @@ MonoBehaviour:
   animacion: {fileID: 1504921015}
   onDoor: 0
   siteDoor: "Ba\xF1o"
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 258322271}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 1504921019}
@@ -32735,7 +32735,7 @@ MonoBehaviour:
   animacion: {fileID: 1643556578}
   onDoor: 0
   siteDoor: "Ba\xF1o"
-  textDoor: {fileID: 0}
+  textDoor: {fileID: 258322271}
   open: {fileID: 8300000, guid: 393efd0310c83104895b93f7e9ea4508, type: 3}
   close: {fileID: 8300000, guid: 4c53516b32915e74eae7cb3887fa2b5a, type: 3}
   audoSource: {fileID: 1643556582}
@@ -39630,7 +39630,7 @@ MonoBehaviour:
   theLight: {fileID: 1108002795}
   lightAudio: {fileID: 8300000, guid: 4e8a43c9724bca245ba35a80f1dec861, type: 3}
   siteLight: Habitacion
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 1820882871}
 --- !u!65 &1820882868
 BoxCollider:
@@ -41742,7 +41742,7 @@ MonoBehaviour:
   theLight: {fileID: 101859558}
   lightAudio: {fileID: 8300000, guid: 56404ded9ccb54644bbb1a5312acb5cf, type: 3}
   siteLight: Cocina
-  textLight: {fileID: 0}
+  textLight: {fileID: 1035137314}
   audioSource: {fileID: 2146198090}
 --- !u!65 &2146198087
 BoxCollider:
