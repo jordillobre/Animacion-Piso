@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class fridge : MonoBehaviour{
 
     private bool onFridge;
+    private bool upDoorIs;
+    private bool downDoorIs;
+    private bool fridgeCage;
+    private bool upCageIs;
+    private bool middleCageIs;
+    private bool infCageIs;
 
     public Animator upDoor;
     public Animator downDoor;
@@ -17,13 +23,6 @@ public class fridge : MonoBehaviour{
     public Text textFridge;
 
     private string buttons;
-
-    public bool upDoorIs;
-    public bool downDoorIs;
-    public bool fridgeCage;
-    public bool upCageIs;
-    public bool middleCageIs;
-    public bool infCageIs;
 
     public AudioClip openUpDoor;
     public AudioClip closeUpDoor;

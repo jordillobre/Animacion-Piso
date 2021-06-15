@@ -7,9 +7,9 @@ public class mesaCocina3 : MonoBehaviour{
 
     public Animator door;
 
-    public bool doorStatus;
-    public bool onTable;
-    public bool waterStatus;
+    private bool doorStatus;
+    private bool onTable;
+    private bool waterStatus;
 
     private string buttons;
 
@@ -20,7 +20,6 @@ public class mesaCocina3 : MonoBehaviour{
     public AudioSource audoSource;
 
     public AudioClip openWater;
-    public AudioClip closeWater;
     public AudioClip openDoor;
     public AudioClip closeDoor;
 
@@ -57,7 +56,7 @@ public class mesaCocina3 : MonoBehaviour{
                     waterStatus = false;
                     water.Stop();
                     audoSource.loop = false;
-                    playSound(closeWater);
+                    playStop();
                 }
 
             }
@@ -91,6 +90,10 @@ public class mesaCocina3 : MonoBehaviour{
     void playSound(AudioClip clip){
         audoSource.clip = clip;
         audoSource.Play();
+    }
+
+    void playStop(){
+        audoSource.Stop();
     }
 
     private void makeText(){

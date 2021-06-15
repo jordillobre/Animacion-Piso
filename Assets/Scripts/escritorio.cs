@@ -11,14 +11,13 @@ public class escritorio : MonoBehaviour{
 
     private string buttons;
 
-    public Animator animDoorA;
-    public Animator animDoorB;
     public Animator animCage1;
     public Animator animCage2;
+    public Animator animCage3;
+    public Animator animCage4;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         
     }
 

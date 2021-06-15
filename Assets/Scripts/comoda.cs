@@ -21,6 +21,11 @@ public class comoda : MonoBehaviour {
     public Animator animCage3;
     public Animator animCage4;
 
+    public AudioClip open;
+    public AudioClip close;
+
+    public AudioSource audoSource;
+
     // Start is called before the first frame update
     void Start(){
         cage1 = false;
@@ -41,7 +46,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.M)){
                     cage1 = false;
                     animCage1.SetBool("action", cage1);
-                    //playSound(close);
+                    playSound(close);
                 }
             }
 
@@ -49,7 +54,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.M)){
                     cage1 = true;
                     animCage1.SetBool("action", cage1);
-                    //playSound(open);
+                    playSound(open);
                 }
             }
 
@@ -57,7 +62,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.N)){
                     cage2 = false;
                     animCage2.SetBool("action", cage2);
-                    //playSound(close);
+                    playSound(close);
                 }
             }
 
@@ -65,7 +70,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.N)){
                     cage2 = true;
                     animCage2.SetBool("action", cage2);
-                    //playSound(open);
+                    playSound(open);
                 }
             }
 
@@ -73,7 +78,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.B)){
                     cage3 = false;
                     animCage3.SetBool("action", cage3);
-                    //playSound(close);
+                    playSound(close);
                 }
             }
 
@@ -81,7 +86,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.B)){
                     cage3 = true;
                     animCage3.SetBool("action", cage3);
-                    //playSound(open);
+                    playSound(open);
                 }
             }
 
@@ -89,7 +94,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.V)){
                     cage4 = false;
                     animCage4.SetBool("action", cage4);
-                    //playSound(close);
+                    playSound(close);
                 }
             }
 
@@ -97,7 +102,7 @@ public class comoda : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.V)){
                     cage4 = true;
                     animCage4.SetBool("action", cage4);
-                    //playSound(open);
+                    playSound(open);
                 }
             }
 
@@ -117,6 +122,11 @@ public class comoda : MonoBehaviour {
             onSite = false;
             textComoda.enabled = false;
         }
+    }
+
+    void playSound(AudioClip clip){
+        audoSource.clip = clip;
+        audoSource.Play();
     }
 
     private void makeText(){
