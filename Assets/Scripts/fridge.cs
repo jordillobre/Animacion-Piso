@@ -25,6 +25,16 @@ public class fridge : MonoBehaviour{
     public bool middleCageIs;
     public bool infCageIs;
 
+    public AudioClip openUpDoor;
+    public AudioClip closeUpDoor;
+    public AudioClip openDownDoor;
+    public AudioClip closeDownDoor;
+    public AudioClip openCage;
+    public AudioClip closeCage;
+
+    public AudioSource audoSource;
+
+
     // Start is called before the first frame update
     void Start(){
         upDoorIs = false;
@@ -47,6 +57,7 @@ public class fridge : MonoBehaviour{
                     if (fridgeCage == false){
                         upDoorIs = false;
                         upDoor.SetBool("action", upDoorIs);
+                        playSound(closeUpDoor);
                     }
                     
                 }
@@ -55,6 +66,7 @@ public class fridge : MonoBehaviour{
                     if (Input.GetKeyDown(KeyCode.M)){
                         fridgeCage = false;
                         cageFridge.SetBool("action", fridgeCage);
+                        playSound(openCage);
                     }
                 }
 
@@ -62,6 +74,7 @@ public class fridge : MonoBehaviour{
                     if (Input.GetKeyDown(KeyCode.M)){
                         fridgeCage = true;
                         cageFridge.SetBool("action", fridgeCage);
+                        playSound(openCage);
                     }
                 }
             }
@@ -70,6 +83,7 @@ public class fridge : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.R)){
                     upDoorIs = true;
                     upDoor.SetBool("action", upDoorIs);
+                    playSound(openUpDoor);
                 }
             }
 
@@ -78,6 +92,7 @@ public class fridge : MonoBehaviour{
                     if ((upCageIs == false) && (middleCageIs == false) && (infCageIs == false)){
                         downDoorIs = false;
                         downDoor.SetBool("action", downDoorIs);
+                        playSound(closeDownDoor);
                     }
                     
                 }
@@ -86,12 +101,14 @@ public class fridge : MonoBehaviour{
                     if (Input.GetKeyDown(KeyCode.L)){
                         upCageIs = false;
                         cageUp.SetBool("action", upCageIs);
+                        playSound(openCage);
                     }
                 }
                 else{
                     if (Input.GetKeyDown(KeyCode.L)){
                         upCageIs = true;
                         cageUp.SetBool("action", upCageIs);
+                        playSound(openCage);
                     }
                 }
 
@@ -99,12 +116,14 @@ public class fridge : MonoBehaviour{
                     if (Input.GetKeyDown(KeyCode.K)){
                         middleCageIs = false;
                         cageInt.SetBool("action", middleCageIs);
+                        playSound(openCage);
                     }
                 }
                 else{
                     if (Input.GetKeyDown(KeyCode.K)){
                         middleCageIs = true;
                         cageInt.SetBool("action", middleCageIs);
+                        playSound(openCage);
                     }
                 }
 
@@ -112,14 +131,14 @@ public class fridge : MonoBehaviour{
                     if (Input.GetKeyDown(KeyCode.J)){
                         infCageIs = false;
                         cageDown.SetBool("action", infCageIs);
+                        playSound(openCage);
                     }
                 }
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.J))
-                    {
+                else{
+                    if (Input.GetKeyDown(KeyCode.J)){
                         infCageIs = true;
                         cageDown.SetBool("action", infCageIs);
+                        playSound(openCage);
                     }
                 }
             }
@@ -128,6 +147,7 @@ public class fridge : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.T)){
                     downDoorIs = true;
                     downDoor.SetBool("action", downDoorIs);
+                    playSound(openDownDoor);
                 }
             }
         }
@@ -149,6 +169,10 @@ public class fridge : MonoBehaviour{
         }
     }
 
+    void playSound(AudioClip clip){
+        audoSource.clip = clip;
+        audoSource.Play();
+    }
     private void makeText(){
         if (upDoorIs){
             buttons = "Pulsa la tecla R para cerrar la puerta superior\n";
