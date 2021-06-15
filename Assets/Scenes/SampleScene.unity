@@ -7579,8 +7579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 152406382}
   onDoor: 0
-  siteDoor: 
-  textDoor: {fileID: 0}
+  siteDoor: Terraza
+  textDoor: {fileID: 1035137314}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 152406384}
@@ -8551,7 +8551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14497,25 +14497,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11064016, y: 1, z: 0.16879043}
   m_Center: {x: -0.04446793, y: 0, z: -0.005130999}
---- !u!114 &521417131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521417129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5afaac2107e294b8aab0822c07a55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSwitch: 0
-  site: Habitacion1
-  theLight: {fileID: 0}
-  lightAudio: {fileID: 8300000, guid: 4e8a43c9724bca245ba35a80f1dec861, type: 3}
-  siteLight: Habitacion
-  textLight: {fileID: 0}
-  audioSource: {fileID: 0}
 --- !u!114 &521417132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32931,19 +32912,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 19b85f0977561974fb9b940d020597c7, type: 2}
     - target: {fileID: 3433992052308909741, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5001745
+      value: 0.7072302
       objectReference: {fileID: 0}
     - target: {fileID: 3433992052308909741, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: -0.7069834
       objectReference: {fileID: 0}
     - target: {fileID: 3433992052308909741, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.49982548
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3433992052308909741, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3433992052308909741, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32955,7 +32936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3433992052308909741, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 89.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4259647642390004820, guid: 96bab5f0e443d1544a1c01e13032818c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -33031,31 +33012,12 @@ MonoBehaviour:
   waterStatus: 0
   texTable: {fileID: 1035137314}
   water: {fileID: 142233205}
-  audoSource: {fileID: 1675009018}
+  audoSource: {fileID: 1675009017}
   openWater: {fileID: 0}
   closeWater: {fileID: 0}
   openDoor: {fileID: 0}
   closeDoor: {fileID: 0}
---- !u!95 &1675009017
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675009011}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 357fcb6a29b6ec541b2eaf769499a22f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &1675009018
+--- !u!82 &1675009017
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33066,7 +33028,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -38236,6 +38198,7 @@ MonoBehaviour:
   open: {fileID: 0}
   close: {fileID: 0}
   audoSource: {fileID: 1729809486}
+  textWindow: {fileID: 258322271}
 --- !u!95 &1729809488
 Animator:
   serializedVersion: 3
@@ -39022,8 +38985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animacion: {fileID: 1781517486}
   onDoor: 0
-  siteDoor: 
-  textDoor: {fileID: 0}
+  siteDoor: Terraza
+  textDoor: {fileID: 1035137314}
   open: {fileID: 8300000, guid: 745ead4ba356fd343ab55926efe34acf, type: 3}
   close: {fileID: 8300000, guid: 33e0262c1b42c954b9aec304db8f3efa, type: 3}
   audoSource: {fileID: 1781517490}
@@ -39410,6 +39373,7 @@ MonoBehaviour:
   open: {fileID: 8300000, guid: 45a1ff921ca528d43b9fb4a3b9f91aa7, type: 3}
   close: {fileID: 8300000, guid: 52a68ced1fa0b9f47be583760d5dcd6c, type: 3}
   audoSource: {fileID: 1795044440}
+  textWindow: {fileID: 1035137314}
 --- !u!65 &1795044442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40197,7 +40161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusdoorA: 0
   statusdoorB: 0
-  texTable: {fileID: 258322271}
+  texTable: {fileID: 1035137314}
   animDoorA: {fileID: 1882263071}
   animDoorB: {fileID: 1882263070}
 --- !u!65 &1882263073
@@ -41440,6 +41404,7 @@ MonoBehaviour:
   open: {fileID: 8300000, guid: 45a1ff921ca528d43b9fb4a3b9f91aa7, type: 3}
   close: {fileID: 8300000, guid: 52a68ced1fa0b9f47be583760d5dcd6c, type: 3}
   audoSource: {fileID: 2133438810}
+  textWindow: {fileID: 1035137314}
 --- !u!82 &2133438810
 AudioSource:
   m_ObjectHideFlags: 0

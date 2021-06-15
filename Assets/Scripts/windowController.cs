@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class windowController : MonoBehaviour{
     public Animator animacion;
@@ -15,15 +16,24 @@ public class windowController : MonoBehaviour{
 
     public AudioSource audoSource;
 
+    public Text textWindow;
+
+    private string buttons;
+
     // Start is called before the first frame update
     public void Start(){
         animacion = this.GetComponent<Animator>();
         theRightWindow = false;
         theLeftWindow = false;
+
+        textWindow.enabled = false;
     }
 
     public void Update(){
         if (onWindow){
+
+            makeText();
+
             if (theRightWindow){
                 if (Input.GetKeyDown(KeyCode.R)){
                     theRightWindow = false;
@@ -62,6 +72,7 @@ public class windowController : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if (other.tag == "Player"){
             onWindow = true;
+            textWindow.enabled = true;
         }
 
     }
@@ -69,34 +80,30 @@ public class windowController : MonoBehaviour{
     void OnTriggerExit(Collider other){
         if (other.tag == "Player"){
             onWindow = false;
-        }
-    }
-
-    void OnGUI(){
-
-        if (onWindow){
-            if (theRightWindow){
-                GUI.Box(new Rect(0, 0, 200, 20), "Press R to close the door");
-            }
-
-            else{
-                GUI.Box(new Rect(0, 0, 200, 20), "Press R to open the door");
-            }
-
-            if (theLeftWindow)
-            {
-                GUI.Box(new Rect(0, 20, 200, 20), "Press T to close the door");
-            }
-
-            else
-            {
-                GUI.Box(new Rect(0, 20, 200, 20), "Press T to open the door");
-            }
+            textWindow.enabled = false;
         }
     }
 
     void playSound(AudioClip clip){
         audoSource.clip = clip;
         audoSource.Play();
+    }
+
+    private void makeText(){
+        if (theRightWindow){
+            buttons = "Pulsa la tecla R para cerrar la ventana izquierda\n";
+        }
+        else{
+            buttons = "Pulsa la tecla R para abrir la ventana izquierda\n";
+        }
+
+        if (theLeftWindow){
+            buttons += "Pulsa la tecla T para cerrar la ventana derecha\n";
+        }
+        else{
+            buttons += "Pulsa la tecla T para abrir la ventana derecha\n";
+        }
+
+        textWindow.text = buttons;
     }
 }

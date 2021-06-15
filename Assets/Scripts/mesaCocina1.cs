@@ -40,14 +40,13 @@ public class mesaCocina1 : MonoBehaviour {
             makeText();
 
             if (doorStatus){
-                if (Input.GetKeyDown(KeyCode.H))
-                {
+                if (Input.GetKeyDown(KeyCode.G)){
                     doorStatus = false;
                     door.SetBool("action", doorStatus);
                 }
             }
             else{
-                if (Input.GetKeyDown(KeyCode.H)){
+                if (Input.GetKeyDown(KeyCode.G)){
                     doorStatus = true;
                     door.SetBool("action", doorStatus);
                 }

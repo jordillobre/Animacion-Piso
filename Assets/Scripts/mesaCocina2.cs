@@ -19,8 +19,9 @@ public class mesaCocina2 : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         statusdoorA = false;
-        statusdoorB = false; 
+        statusdoorB = false;
 
+        texTable.enabled = false;
     }
 
     // Update is called once per frame
@@ -29,26 +30,26 @@ public class mesaCocina2 : MonoBehaviour{
             makeText();
 
             if (statusdoorA){
-                if (Input.GetKeyDown(KeyCode.R)){
+                if (Input.GetKeyDown(KeyCode.Y)){
                     statusdoorA = false;
                     animDoorA.SetBool("action", statusdoorA);
                 }
             }
             else{
-                if (Input.GetKeyDown(KeyCode.R)){
+                if (Input.GetKeyDown(KeyCode.Y)){
                     statusdoorA = true;
                     animDoorA.SetBool("action", statusdoorA);
                 }
             }
 
             if (statusdoorB){
-                if (Input.GetKeyDown(KeyCode.T)){
+                if (Input.GetKeyDown(KeyCode.U)){
                     statusdoorB = false;
                     animDoorB.SetBool("action", statusdoorB);
                 }
             }
             else{
-                if (Input.GetKeyDown(KeyCode.T)){
+                if (Input.GetKeyDown(KeyCode.U)){
                     statusdoorA = true;
                     animDoorB.SetBool("action", statusdoorB);
                 }
@@ -71,22 +72,21 @@ public class mesaCocina2 : MonoBehaviour{
         }
     }
 
-    private void makeText()
-    {
+    private void makeText(){
         if (statusdoorA){
-            buttons = "Pulsa la tecla R para cerrar la puerta izquierda\n";
+            buttons = "Pulsa la tecla Y para cerrar la puerta izquierda\n";
         }
         else{
-            buttons = "Pulsa la tecla R para abrir la puerta izquierda\n";
+            buttons = "Pulsa la tecla Y para abrir la puerta izquierda\n";
         }
 
         if (statusdoorB)
         {
-            buttons += "Pulsa la tecla T para cerrar la puerta derecha\n";
+            buttons += "Pulsa la tecla U para cerrar la puerta derecha\n";
         }
         else
         {
-            buttons += "Pulsa la tecla T para abrir la puerta derecha\n";
+            buttons += "Pulsa la tecla U para abrir la puerta derecha\n";
         }
 
         texTable.text = buttons;
