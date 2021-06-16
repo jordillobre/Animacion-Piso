@@ -18,6 +18,12 @@ public class mesaCocina1 : MonoBehaviour {
     private bool cage3;
     private bool cage4;
 
+    public AudioSource audoSource;
+    public AudioClip openDoor;
+    public AudioClip closeDoor;
+    public AudioClip openCage;
+    public AudioClip closeCage;
+
     public Text texTable;
 
     private string buttons;
@@ -43,19 +49,21 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.G)){
                     doorStatus = false;
                     door.SetBool("action", doorStatus);
+                    playSound(openDoor);
                 }
             }
             else{
                 if (Input.GetKeyDown(KeyCode.G)){
                     doorStatus = true;
                     door.SetBool("action", doorStatus);
+                    playSound(closeDoor);
                 }
             }
             if (cage1){
                 if (Input.GetKeyDown(KeyCode.M)){
                     cage1 = false;
                     animCage1.SetBool("action", cage1);
-                    //playSound(close);
+                    playSound(closeCage);
                 }
             }
 
@@ -63,7 +71,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.M)){
                     cage1 = true;
                     animCage1.SetBool("action", cage1);
-                    //playSound(open);
+                    playSound(openCage);
                 }
             }
 
@@ -71,7 +79,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.N)){
                     cage2 = false;
                     animCage2.SetBool("action", cage2);
-                    //playSound(close);
+                    playSound(closeCage);
                 }
             }
 
@@ -79,7 +87,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.N)){
                     cage2 = true;
                     animCage2.SetBool("action", cage2);
-                    //playSound(open);
+                    playSound(openCage);
                 }
             }
 
@@ -87,7 +95,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.B)){
                     cage3 = false;
                     animCage3.SetBool("action", cage3);
-                    //playSound(close);
+                    playSound(closeCage);
                 }
             }
 
@@ -95,7 +103,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.B)){
                     cage3 = true;
                     animCage3.SetBool("action", cage3);
-                    //playSound(open);
+                    playSound(openCage);
                 }
             }
 
@@ -103,7 +111,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.V)){
                     cage4 = false;
                     animCage4.SetBool("action", cage4);
-                    //playSound(close);
+                    playSound(closeCage);
                 }
             }
 
@@ -111,7 +119,7 @@ public class mesaCocina1 : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.V)){
                     cage4 = true;
                     animCage4.SetBool("action", cage4);
-                    //playSound(open);
+                    playSound(openCage);
                 }
             }
 
@@ -131,6 +139,11 @@ public class mesaCocina1 : MonoBehaviour {
             onTable = false;
             texTable.enabled = false;
         }
+    }
+
+    void playSound(AudioClip clip){
+        audoSource.clip = clip;
+        audoSource.Play();
     }
 
     private void makeText(){

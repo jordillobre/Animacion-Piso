@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class mesaCocina2 : MonoBehaviour{
 
     private bool onTable;
-    public bool statusdoorA;
-    public bool statusdoorB;
+    private bool statusdoorA;
+    private bool statusdoorB;
 
     public Text texTable;
 
@@ -15,6 +15,11 @@ public class mesaCocina2 : MonoBehaviour{
 
     public Animator animDoorA;
     public Animator animDoorB;
+
+    public AudioSource audoSource;
+
+    public AudioClip openDoor;
+    public AudioClip closeDoor;
 
     // Start is called before the first frame update
     void Start(){
@@ -33,12 +38,14 @@ public class mesaCocina2 : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.Y)){
                     statusdoorA = false;
                     animDoorA.SetBool("action", statusdoorA);
+                    playSound(closeDoor);
                 }
             }
             else{
                 if (Input.GetKeyDown(KeyCode.Y)){
                     statusdoorA = true;
                     animDoorA.SetBool("action", statusdoorA);
+                    playSound(openDoor);
                 }
             }
 
@@ -46,12 +53,14 @@ public class mesaCocina2 : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.U)){
                     statusdoorB = false;
                     animDoorB.SetBool("action", statusdoorB);
+                    playSound(closeDoor);
                 }
             }
             else{
                 if (Input.GetKeyDown(KeyCode.U)){
                     statusdoorA = true;
                     animDoorB.SetBool("action", statusdoorB);
+                    playSound(openDoor);
                 }
             }
         }
@@ -72,6 +81,11 @@ public class mesaCocina2 : MonoBehaviour{
         }
     }
 
+    void playSound(AudioClip clip){
+        audoSource.clip = clip;
+        audoSource.Play();
+    }
+
     private void makeText(){
         if (statusdoorA){
             buttons = "Pulsa la tecla Y para cerrar la puerta izquierda\n";
@@ -80,12 +94,10 @@ public class mesaCocina2 : MonoBehaviour{
             buttons = "Pulsa la tecla Y para abrir la puerta izquierda\n";
         }
 
-        if (statusdoorB)
-        {
+        if (statusdoorB){
             buttons += "Pulsa la tecla U para cerrar la puerta derecha\n";
         }
-        else
-        {
+        else{
             buttons += "Pulsa la tecla U para abrir la puerta derecha\n";
         }
 

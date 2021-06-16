@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class armario : MonoBehaviour {
 
     private bool onSite;
-
     private bool doorA;
     private bool doorB;
     private bool cage1;
@@ -20,6 +19,12 @@ public class armario : MonoBehaviour {
     public Text textArmario;
 
     private string buttons;
+
+    public AudioSource audoSource;
+    public AudioClip openDoor;
+    public AudioClip closeDoor;
+    public AudioClip openCage;
+    public AudioClip closeCage;
 
     // Start is called before the first frame update
     void Start(){
@@ -42,6 +47,7 @@ public class armario : MonoBehaviour {
                     if (Input.GetKeyDown(KeyCode.Q)){
                         doorA = false;
                         animDoorA.SetBool("action", doorA);
+                        playSound(closeDoor);
                     }
                 }
 
@@ -50,6 +56,7 @@ public class armario : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Q)){
                     doorA = true;
                     animDoorA.SetBool("action", doorA);
+                    playSound(openDoor);
                 }
             }
 
@@ -58,6 +65,7 @@ public class armario : MonoBehaviour {
                     if (Input.GetKeyDown(KeyCode.E)){
                         doorB = false;
                         animDoorB.SetBool("action", doorB);
+                        playSound(closeDoor);
                     }
                 }
 
@@ -66,6 +74,7 @@ public class armario : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.E)){
                     doorB = true;
                     animDoorB.SetBool("action", doorB);
+                    playSound(openDoor);
                 }
             }
 
@@ -74,15 +83,15 @@ public class armario : MonoBehaviour {
                     if (Input.GetKeyDown(KeyCode.R)){
                         cage1 = false;
                         animCage1.SetBool("action", cage1);
+                        playSound(closeCage);
                     }
 
                 }
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.R))
-                    {
+                else{
+                    if (Input.GetKeyDown(KeyCode.R)){
                         cage1 = true;
                         animCage1.SetBool("action", cage1);
+                        playSound(openCage);
                     }
                 }
 
@@ -90,6 +99,7 @@ public class armario : MonoBehaviour {
                     if (Input.GetKeyDown(KeyCode.T)){
                         cage2 = false;
                         animCage2.SetBool("action", cage2);
+                        playSound(closeCage);
                     }
 
                 }
@@ -97,6 +107,7 @@ public class armario : MonoBehaviour {
                     if (Input.GetKeyDown(KeyCode.T)){
                         cage2 = true;
                         animCage2.SetBool("action", cage2);
+                        playSound(openCage);
                     }
                 }
             }
@@ -115,6 +126,11 @@ public class armario : MonoBehaviour {
             onSite = false;
             textArmario.enabled = false;
         }
+    }
+
+    void playSound(AudioClip clip){
+        audoSource.clip = clip;
+        audoSource.Play();
     }
 
     private void makeText(){

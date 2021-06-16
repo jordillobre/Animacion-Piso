@@ -42,12 +42,14 @@ public class mesaCocina3 : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.G)){
                     doorStatus = false;
                     door.SetBool("action", doorStatus);
+                    playSound(closeDoor);
                 }
             }
             else{
                 if (Input.GetKeyDown(KeyCode.G)){
                     doorStatus = true;
                     door.SetBool("action", doorStatus);
+                    playSound(openDoor);
                 }
             }
 
@@ -56,7 +58,7 @@ public class mesaCocina3 : MonoBehaviour{
                     waterStatus = false;
                     water.Stop();
                     audoSource.loop = false;
-                    playStop();
+                    stopSound();
                 }
 
             }
@@ -92,7 +94,7 @@ public class mesaCocina3 : MonoBehaviour{
         audoSource.Play();
     }
 
-    void playStop(){
+    void stopSound(){
         audoSource.Stop();
     }
 
