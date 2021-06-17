@@ -4,49 +4,65 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class wateController : MonoBehaviour{
-    public bool onWash;
+    private bool onWash;
+    private bool doorAStatus;
+    private bool doorBStatus;
+    private bool theHotWaterIs;
+    private bool theColdWaterIs;
 
     public Text texTable;
 
     private string buttons;
 
-    private bool theHotWaterIs;
-    private bool theColdWaterIs;
-
     public ParticleSystem hotWater;
     public ParticleSystem coldWater;
 
-    public AudioClip open;
-    public AudioClip close;
+    public AudioClip openWaterr;
+    public AudioClip closeWater;
+    public AudioClip Water;
+    public AudioClip openDoor;
+    public AudioClip closeDoor;
 
     public AudioSource audoSource;
+
+    public Animator manillaCaliente;
+    public Animator manillaFria;
+    public Animator doorA;
+    public Animator doorB;
 
     // Start is called before the first frame update
     public void Start(){
         theHotWaterIs = false;
         theColdWaterIs = false;
+        doorAStatus = false;
+        doorBStatus = false;
         hotWater.Stop();
         coldWater.Stop();
+
+        texTable.enabled = false;
+        buttons = "";
     }
 
     public void Update(){
         if (onWash){
+            makeText();
+
             if (theHotWaterIs){
                 if (Input.GetKeyDown(KeyCode.H)){
                     theHotWaterIs = false;
                     hotWater.Stop();
-                    Debug.Log(theHotWaterIs);
+                    manillaCaliente.SetBool("action", theHotWaterIs); 
                     audoSource.loop = false;
-                    playSound(close);
+                    //playSound(close);
                 }
             }
             else{
                 if (Input.GetKeyDown(KeyCode.H)){
                     theHotWaterIs = true;
-                    Debug.Log(theHotWaterIs);
+                    manillaCaliente.SetBool("action", theHotWaterIs);
                     audoSource.loop = true;
                     hotWater.Play();
-                    playSound(open);
+                    //playSound(open);
                 }
             }
 
@@ -55,16 +71,49 @@ public class wateController : MonoBehaviour{
                     theColdWaterIs = false;
                     coldWater.Stop();
                     audoSource.loop = false;
-                    playSound(close);
+                    manillaFria.SetBool("action", coldWater);
+                    //playSound(close);
                 }
             }
-            else
-            {
+            else{
                 if (Input.GetKeyDown(KeyCode.G)){
                     theColdWaterIs = true;
                     audoSource.loop = true;
+                    manillaFria.SetBool("action", coldWater);
                     coldWater.Play();
-                    playSound(open);
+                    //playSound(open);
+                }
+            }
+
+            if (doorAStatus){
+                if (Input.GetKeyDown(KeyCode.J)){
+                    doorAStatus = false;
+                    doorA.SetBool("action", doorAStatus);
+                    //playSound(close);
+                }
+            }
+
+            else{
+                if (Input.GetKeyDown(KeyCode.J)){
+                    doorAStatus = true;
+                    doorA.SetBool("action", doorAStatus);
+                    //playSound(open);
+                }
+            }
+
+            if (doorBStatus){
+                if (Input.GetKeyDown(KeyCode.K)){
+                    doorBStatus = false;
+                    doorB.SetBool("action", doorBStatus);
+                    //playSound(close);
+                }
+            }
+
+            else{
+                if (Input.GetKeyDown(KeyCode.K)){
+                    doorBStatus = true;
+                    doorB.SetBool("action", doorBStatus);
+                    //playSound(open);
                 }
             }
 
@@ -74,6 +123,7 @@ public class wateController : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if (other.tag == "Player"){
             onWash = true;
+            texTable.enabled = true;
         }
 
     }
@@ -81,29 +131,39 @@ public class wateController : MonoBehaviour{
     void OnTriggerExit(Collider other){
         if (other.tag == "Player"){
             onWash = false;
+            texTable.enabled = false;
         }
     }
 
-    void OnGUI(){
-
-        if (onWash){
-            if (theHotWaterIs){
-                GUI.Box(new Rect(0, 0, 200, 20), "Press G to close the hot water");
-            }
-
-            else{
-                GUI.Box(new Rect(0, 0, 200, 20), "Press G to open the hot water");
-            }
-
-            if (theColdWaterIs){
-                GUI.Box(new Rect(0, 20, 200, 20), "Press H to close the cold water");
-            }
-
-            else
-            {
-                GUI.Box(new Rect(0, 20, 200, 20), "Press H to open the cold water");
-            }
+    private void makeText(){
+        if (theHotWaterIs){
+            buttons = "Pulsa la tecla H para cerrar el agua caliente \n";
         }
+        else{
+            buttons = "Pulsa la tecla H para abrir el agua caliente \n";
+        }
+
+        if (theColdWaterIs){
+            buttons += "Pulsa la tecla G para cerrar el agua fria \n";
+        }
+        else{
+            buttons += "Pulsa la tecla G para abrir el agua fria \n";
+        }
+
+        if (doorAStatus){
+            buttons += "Pulsa la tecla J para cerrar la puerta izquierda \n";
+        }
+        else{
+            buttons += "Pulsa la tecla J para abrir la puerta izquierda \n";
+        }
+
+        if (doorBStatus) { 
+            buttons += "Pulsa la tecla K para cerrar la puerta derecha \n";
+        }
+        else{
+            buttons += "Pulsa la tecla K para abrir la puerta derechan \n";
+        }
+        texTable.text = buttons;
     }
 
     void playSound(AudioClip clip){
