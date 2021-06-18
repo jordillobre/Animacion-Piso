@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class lightController : MonoBehaviour{
 
-    public bool onSwitch;
-    public string site;
+    private bool onSwitch;
+    private bool switchStatus;
     private bool lightStatus;
+    
+    public string site;
+    
     public GameObject theLight;
 
     public AudioClip lightAudio;
@@ -20,9 +23,12 @@ public class lightController : MonoBehaviour{
 
     public AudioSource audioSource;
 
+    public Animator switchLight;
+
     void Start(){
         theLight.SetActive(PlayerPrefs.GetInt(site) == 1);
         textLight.enabled = false;
+        switchStatus = false;
     }
 
 
@@ -55,6 +61,8 @@ public class lightController : MonoBehaviour{
             makeText();
             if (lightStatus){
                 if (Input.GetKeyDown(KeyCode.E)){
+                    switchStatus = !switchStatus;
+                    switchLight.SetBool("action", switchStatus);
                     PlayerPrefs.SetInt(site, 0);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
@@ -64,6 +72,8 @@ public class lightController : MonoBehaviour{
 
             else{
                 if (Input.GetKeyDown(KeyCode.E)){
+                    switchStatus = !switchStatus;
+                    switchLight.SetBool("action", switchStatus);
                     PlayerPrefs.SetInt(site, 1);
                     lightStatus = !lightStatus;
                     theLight.SetActive(lightStatus);
